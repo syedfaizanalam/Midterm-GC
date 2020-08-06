@@ -30,7 +30,7 @@ public class Members {
 
 
 
-	public void setId(int id) {
+	public void setId(int memberID) {
 		this.memberID = memberID;
 	}
 
@@ -42,7 +42,7 @@ public class Members {
 
 
 
-	public void setName(String name) {
+	public void setName(String memberName) {
 		this.memberName = memberName;
 	}
 
