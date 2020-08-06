@@ -10,7 +10,9 @@ public class CentralApp {
 
 		System.out.println("G0lam");
 		
-		System.out.println("golam's new's changed");
+		
+		System.out.println("golam's name changed");
+		System.out.println("cahnges are made");
 
 	}
 
