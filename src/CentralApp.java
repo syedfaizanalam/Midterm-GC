@@ -8,7 +8,9 @@ public class CentralApp {
 
 		System.out.println("Welcome you all!");
 
-		System.out.println("Golam");
+		System.out.println("G0lam");
+		
+		System.out.println("golam's new's changed");
 
 	}
 
