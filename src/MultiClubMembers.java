@@ -1,5 +1,5 @@
 
-public class MultiClubMembers extends Memebrs {
+public class MultiClubMembers extends Members {
 
 	private int points;
 	
@@ -9,7 +9,7 @@ public class MultiClubMembers extends Memebrs {
 	}
 
 
-	public MultiClubMembers(String memberID,String memberName,int points) {
+	public MultiClubMembers(int memberID,String memberName,int points) {
 		super(memberID,memberName);
 		this.points = points;
 	}
@@ -24,7 +24,7 @@ public class MultiClubMembers extends Memebrs {
 		this.points = points;
 	}
 	public String toString() {
-		return "Memeber[MemebrID="+getMemebrID()+"Memebr name="+getMemberName()+"Points="+points+"]";
+		return "Memeber[MemebrID="+getId()+"Memebr name="+getName()+"Points="+points+"]";
 	}
 	
 	

@@ -8,7 +8,7 @@ public class SingleClubMembers extends Members {
 	}
 
 
-	public SingleClubMembers(String memberID,String memberName,String clubName) {
+	public SingleClubMembers(int memberID,String memberName,String clubName) {
 		super(memberID,memberName);
 		this.clubName = clubName;
 	}
@@ -23,7 +23,7 @@ public class SingleClubMembers extends Members {
 		this.clubName = clubName;
 	}
 	public String toString() {
-		return "Memeber[MemebrID="+getMemebrID()+"Memebr name="+getMemberName()+"Club Name="+getClubName()+"]";
+		return "Memeber[MemebrID="+getId()+"Member name="+getName()+"Club Name="+getClubName()+"]";
 	}
 	
 	

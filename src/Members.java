@@ -12,6 +12,22 @@ public class Members {
 		return memberID;
 	}
 
+	
+
+
+	public Members() {
+		super();
+	}
+
+
+
+
+	public Members(int memberID, String memberName) {
+		super();
+		this.memberID = memberID;
+		this.memberName = memberName;
+	}
+
 
 
 	public void setId(int id) {
