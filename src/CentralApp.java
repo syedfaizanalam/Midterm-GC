@@ -12,13 +12,15 @@ public class CentralApp {
 		
 		
 		System.out.println("golam's name changed");
-<<<<<<< HEAD
+
 		System.out.println("changes are made");
-=======
+
 		System.out.println("cahnges are made");
 		
 		System.out.println("ok");
->>>>>>> 2ee109a83f5dbc4be4fcd6b923be65e9add1bbea
+		
+		System.out.println("hello motto");
+
 
 	}
 
