@@ -36,13 +36,13 @@ public class Club {
 		return "Club [memberName=" + memberName + ", address=" + address + "]";
 	} 
 	
-//	public String addMember(String string) {
-//		String newMember = null;
-//		for(String thisMember : string) {
-//			newMember += thisMember;
-//		}
-//		return newMember;
-//	}
+	public String addMember(String[] string) {
+		String newMember = null;
+		for(String thisMember : string) {
+			newMember += thisMember;
+		}
+		return newMember;
+	}
 
 	
 	

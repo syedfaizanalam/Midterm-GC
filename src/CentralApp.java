@@ -9,7 +9,7 @@ public class CentralApp {
 		
 		Club person = new Club();
 		
-//		person.addMember("Golam Chowdhury");
+		person.addMember("Golam Chowdhury");
 		
 		
 
