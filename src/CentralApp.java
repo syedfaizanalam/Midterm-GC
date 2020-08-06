@@ -13,6 +13,8 @@ public class CentralApp {
 		
 		System.out.println("golam's name changed");
 		System.out.println("cahnges are made");
+		
+		System.out.println("ok");
 
 	}
 
