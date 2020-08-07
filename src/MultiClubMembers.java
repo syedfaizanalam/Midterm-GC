@@ -29,7 +29,7 @@ public class MultiClubMembers extends Members {
 	}
 
 	public void checkIn(Club club)   {
-		this.points=5;	
+		this.points+=5;	
 	}
 }
 
