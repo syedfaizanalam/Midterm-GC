@@ -1,40 +1,45 @@
+<<<<<<< HEAD
 import java.lang.Iterable;
 import java.util.ArrayList;
 import java.util.List;
+=======
+
+>>>>>>> ad9a339d00c157fabf2fbff508c75c97eca83ed5
 
 public class Club {
 
-	String memberName;
+	String clubName;
 	String address;
 	
 	public Club() {
 		super();
 	}
-	
-	public Club(String memberName, String address) {
+
+	public Club(String clubName, String address) {
 		super();
-		this.memberName = memberName;
+		this.clubName = clubName;
 		this.address = address;
 	}
-	
-	public String getMemberName() {
-		return memberName;
+
+	public String getClubName() {
+		return clubName;
 	}
-	
-	public void setMemberName(String memberName) {
-		this.memberName = memberName;
+
+	public void setClubName(String clubName) {
+		this.clubName = clubName;
 	}
-	
+
 	public String getAddress() {
 		return address;
 	}
-	
+
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
+
 	@Override
 	public String toString() {
+<<<<<<< HEAD
 		return "Club [memberName=" + memberName + ", address=" + address + "]";
 	} 
 	
@@ -53,9 +58,15 @@ public class Club {
 		}
 		return newID;
 	}
+=======
+
+		return "Club [memberName=" + clubName + ", address=" + address + "]";
+	} 
+>>>>>>> ad9a339d00c157fabf2fbff508c75c97eca83ed5
 	
 	
 
 	
+
 	
 }
