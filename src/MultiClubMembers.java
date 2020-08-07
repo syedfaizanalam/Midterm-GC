@@ -32,4 +32,4 @@ public class MultiClubMembers extends Members {
 		this.points=5;	
 	}
 }
-}
+

@@ -46,8 +46,9 @@ public class ClubDemo {
 					members.add(mcm);
 				}
 			}
-			else if (userInput == 1) {
+			else if (userInput == 4) {
 				for (int i=0;i<members.size();i++){
+					
 					if (members.get(i) instanceof SingleClubMembers)
 					{
 						System.out.println(members.get(i).getId()+
@@ -62,6 +63,7 @@ public class ClubDemo {
 					}
 				}
 			}
+			
 			} 
 	}
 	

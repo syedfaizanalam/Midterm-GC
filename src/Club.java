@@ -1,4 +1,4 @@
-import java.lang.Iterable;
+
 
 public class Club {
 
@@ -33,23 +33,12 @@ public class Club {
 
 	@Override
 	public String toString() {
-<<<<<<< HEAD
-		return "Club [clubName=" + clubName + ", address=" + address + "]";
-	}
-=======
-		return "Club [memberName=" + memberName + ", address=" + address + "]";
+
+		return "Club [memberName=" + clubName + ", address=" + address + "]";
 	} 
 	
-	public String addMember(String[] string) {
-		String newMember = null;
-		for(String thisMember : string) {
-			newMember += thisMember;
-		}
-		return newMember;
-	}
-
 	
->>>>>>> 46c3c36d85c6192e98b1586bebe11b2a680aef61
+
 	
 
 	
