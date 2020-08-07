@@ -10,7 +10,7 @@ public class GUIApp {
 		appFrame.setTitle("ABC Gym");
 		appFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		System.out.println(appFrame);
+
 		
 	}
 

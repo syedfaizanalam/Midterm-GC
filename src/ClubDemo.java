@@ -30,14 +30,14 @@ public class ClubDemo {
 			System.out.println("1-See the list of members");
 			System.out.println("2-Add a member");
 			System.out.println("3-Remove a memeber");
-<<<<<<< HEAD
+
 			System.out.println("4-Display memebr information");
 			System.out.println("5.Check-in");
 			System.out.println("6-Exit");
-=======
+
 			System.out.println("4-Display member information");
 			System.out.println("5-Exit");
->>>>>>> e3778a622c84063dc56f5f132a931c83f11d13a9
+
 			System.out.println();
 			System.out.println("Enter menu number: ");
 			int userInput = scnr.nextInt();
@@ -114,7 +114,7 @@ public class ClubDemo {
 			}
 			else if(userInput==1) {
 				listMembers();
-<<<<<<< HEAD
+
 			}else if(userInput==5) {
 				Club club=new Club();
 				//filePath2;
@@ -126,7 +126,8 @@ public class ClubDemo {
 					if(clubChoice) {
 						System.out.println("Your club name: ");
 						singleClubName=scnr.nextLine();						
-						checkIn() ;
+						Members mmbrs = null;
+						mmbrs.checkIn() ;
 					}
 					
 				}
@@ -138,11 +139,11 @@ public class ClubDemo {
 		}
 			
 			
-=======
+
 			}			
-			} 
->>>>>>> e3778a622c84063dc56f5f132a931c83f11d13a9
-	}
+			 
+
+	
 	public static List<Members> readFile() {
 		try {
 			List<String> lines = Files.readAllLines(filePath);

@@ -30,7 +30,7 @@ public abstract class Members {
 		this.memberName = memberName;
 	}
 
-	public abstract void checkIn(Club club);
+	public abstract void checkIn();
 		
 }		
 		
