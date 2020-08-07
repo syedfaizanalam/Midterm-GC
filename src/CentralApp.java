@@ -1,18 +1,24 @@
-import java.lang.Iterable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CentralApp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String[] members = null; 
+		List<String> members = new ArrayList<>();
+		List<Integer> ID = new ArrayList<>();
 		
-		Club person = new Club();
+		members.add("Golam");
+		members.add("Kavitha");
+		members.add("Faizan");
 		
-		person.addMember("Golam Chowdhury");
+		System.out.println(members);
 		
-		
-
+		ID.add(1);
+		ID.add(2);
+		ID.add(3);
+		System.out.println(ID);
 
 	}
 
