@@ -20,7 +20,7 @@ public class MultiClubMembers extends Members {
 		return points;
 	}
 
-
+	
 	public void setPoints(int points) {
 		this.points = points;
 	}

@@ -24,7 +24,7 @@ public class ClubDemo {
 			System.out.println("1-See the list of members");
 			System.out.println("2-Add a member");
 			System.out.println("3-Remove a memeber");
-			System.out.println("4-Display memebr information");
+			System.out.println("4-Display member information");
 			System.out.println("5-Exit");
 			System.out.println();
 			System.out.println("Enter menu number: ");
@@ -67,8 +67,7 @@ public class ClubDemo {
 			}
 			else if(userInput==1) {
 				listMembers();
-			}
-			
+			}			
 			} 
 	}
 	public static List<Members> readFile() {

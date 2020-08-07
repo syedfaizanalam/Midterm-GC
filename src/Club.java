@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-import java.lang.Iterable;
 import java.util.ArrayList;
 import java.util.List;
-=======
 
->>>>>>> ad9a339d00c157fabf2fbff508c75c97eca83ed5
 
 public class Club {
 
@@ -39,8 +35,8 @@ public class Club {
 
 	@Override
 	public String toString() {
-<<<<<<< HEAD
-		return "Club [memberName=" + memberName + ", address=" + address + "]";
+
+		return "Club [clubName=" + clubName + ", address=" + address + "]";
 	} 
 	
 	public List<String> addMember(List<String> string) {
@@ -57,16 +53,7 @@ public class Club {
 			newID.add(thisID);
 		}
 		return newID;
-	}
-=======
-
-		return "Club [memberName=" + clubName + ", address=" + address + "]";
 	} 
->>>>>>> ad9a339d00c157fabf2fbff508c75c97eca83ed5
-	
 	
 
-	
-
-	
 }
