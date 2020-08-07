@@ -78,7 +78,7 @@ public class ClubDemo {
 			List<Members> members = new ArrayList<>();
 			for (String line : lines) {
 				String[] parts = line.split(",");
-				if(members instanceof SingleClubMembers) {
+				if(line.contains()) {
 				int memberId = Integer.parseInt(parts[0]);
 				String memberName = parts[1];
 				String clubName = parts[2];
