@@ -10,10 +10,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-
-
-
-
 public class ClubDemo {
 	private static Path filePath = Paths.get("members.txt");
 	private static Path filePath2 = Paths.get("clubnames.txt");
@@ -51,7 +47,7 @@ public class ClubDemo {
 				if(yesNo) {
 					System.out.println("Enter club name: ");
 					clubName=scnr.nextLine();
-					scm=new SingleClubMembers(id,name,clubName);
+			//		scm=new SingleClubMembers(id,name,clubName);
 					members.add(scm);
 					appendLineToFile(scm);
 				}else {
@@ -168,7 +164,7 @@ public class ClubDemo {
 					int memberId = Integer.parseInt(parts[0]);
 					String memberName = parts[1];
 					String clubName = parts[2];
-					members.add(new SingleClubMembers(memberId, memberName, clubName));
+			//		members.add(new SingleClubMembers(memberId, memberName));
 				}
 				
 			}
@@ -235,8 +231,8 @@ public class ClubDemo {
 						bw.write(members.get(i).getId() + "," + members.get(i).getName()+","+((MultiClubMembers)members.get(i)).getPoints());
 						bw.newLine();
 				}
-			
-					
+
+				
 			}
 			bw.close();
 		} catch (IOException e) {

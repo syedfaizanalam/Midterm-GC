@@ -1,5 +1,5 @@
 
-public class SingleClubMembers extends Members {
+public abstract  class SingleClubMembers extends Members {
 	private String clubName;
 	
 	public SingleClubMembers() {
