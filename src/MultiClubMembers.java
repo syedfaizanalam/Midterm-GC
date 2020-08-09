@@ -28,8 +28,8 @@ public class MultiClubMembers extends Members {
 		return "Memeber[MemebrID="+getId()+"Memebr name="+getName()+"Points="+points+"]";
 	}
 
-	/*public void checkIn(Club club)   {
-		this.points+=5;	
-	}*/
+	public void checkIn(Club club)   {
+		this.points+=5;
+	}
 }
 

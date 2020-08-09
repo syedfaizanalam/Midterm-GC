@@ -49,7 +49,7 @@ public class Club {
 		return "Club [clubName=" + clubName + ", address=" + address + "]";
 	} 
 	 
-	
+	/*
 	public List<String> addMember(List<String> string) {
 		List<String> newMember = new ArrayList<>();;
 		for(String thisMember : string) {
@@ -66,6 +66,6 @@ public class Club {
 		return newID;
 	} 
 	
-
+*/
 
 }

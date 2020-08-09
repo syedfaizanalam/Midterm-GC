@@ -1,5 +1,6 @@
-package Midterm-GC;
-public abstract  class SingleClubMembers extends Members {
+import java.util.InputMismatchException;
+
+public  class SingleClubMembers extends Members {
 	private String clubName;
 	
 	public SingleClubMembers() {
@@ -23,11 +24,10 @@ public abstract  class SingleClubMembers extends Members {
 		return "Memeber[MemebrID=" + getId() + "Member name=" + getName() + "Club Name=" + getClubName() + "]";
 	}
 	public void checkIn(Club club)   {
-			
 			if(club.clubName.equalsIgnoreCase(this.getClubName())){
-				System.out.println("Check-in ok.");		
+				System.out.println("Check-in ok.");	
 		} else {
-			throw new ArithmeticException("Checkin failed.");
+			throw new InputMismatchException();
 		}
 	}
 
