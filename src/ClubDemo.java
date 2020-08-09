@@ -25,19 +25,17 @@ public class ClubDemo {
 		while (true) {
 			System.out.println("1-See the list of members");
 			System.out.println("2-Add a member");
-			System.out.println("3-Remove a memeber");
-
-			System.out.println("4-Display memebr information");
+			System.out.println("3-Remove a member");
+			System.out.println("4-Display member information");
 			System.out.println("5.Check-in");
 			System.out.println("6-Exit");
-
-			System.out.println("4-Display member information");
-			System.out.println("5-Exit");
-
 			System.out.println();
 			System.out.println("Enter menu number: ");
 			int userInput = scnr.nextInt();
-			if (userInput == 2) {
+			if(userInput==1) {
+				listMembers();
+			}
+			else if (userInput == 2) {
 				System.out.println("Enter id: ");
 				id=scnr.nextInt();
 				scnr.nextLine();
@@ -47,7 +45,7 @@ public class ClubDemo {
 				if(yesNo) {
 					System.out.println("Enter club name: ");
 					clubName=scnr.nextLine();
-			//		scm=new SingleClubMembers(id,name,clubName);
+					scm=new SingleClubMembers();
 					members.add(scm);
 					appendLineToFile(scm);
 				}else {
@@ -108,10 +106,7 @@ public class ClubDemo {
 				}
 				
 			}
-			else if(userInput==1) {
-				listMembers();
-
-			}else if(userInput==5) {
+			else if(userInput==5) {
 				Club club=new Club();
 				//filePath2;
 				boolean yesOrNo,clubChoice;

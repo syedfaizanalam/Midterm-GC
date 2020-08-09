@@ -1,4 +1,4 @@
-
+package Midterm-GC;
 public abstract  class SingleClubMembers extends Members {
 	private String clubName;
 	
