@@ -131,11 +131,8 @@ public class ClubDemo {
 				}
 
 			} else if (userInput == 5) {
-<<<<<<< HEAD
 		//boolean b =false;	
-=======
 				boolean b =false;
->>>>>>> eabebe8e6fd7ace6d4a8c0a3a7656da2aa22477c
 				int id1;
 				id1 = Validator.getInt(scnr, "Enter your ID: ");
 				members = readFile();
@@ -143,7 +140,7 @@ public class ClubDemo {
 				boolean clubFound = false;
 				for (int i = 0; i < members.size(); i++) {
 					if ((members.get(i)).getId() == id1) {
-						//true;
+						b=true;
 						name = (members.get(i)).getName();
 						if ((members.get(i)) instanceof SingleClubMembers) {
 							System.out.println("Enter club name: ");
@@ -165,26 +162,22 @@ public class ClubDemo {
 						} //single
 						else {
 							members.get(i).checkIn(clubs.get(0));
-							writeToFile(members);
-<<<<<<< HEAD
-							
-						}
+					}
 					}
 /*		if(!b){
 							System.out.println("Invalid Id, Try again");
 						}*/
 						break;
 					}
-=======
+			
 						}//else
-					}//members.get(i)
-				}//for
-						if(!b){
-							System.out.println("Invalid Id, Try again!\n");
-						}
+					//members.get(i)
+				//for
+			if(!b){
+				System.out.println("Invalid Id, Try again!\n");
+			}
 						//break;
->>>>>>> eabebe8e6fd7ace6d4a8c0a3a7656da2aa22477c
-				}
+
 			 else if (userInput == 6) {
 				int id2;
 				id2 = Validator.getInt(scnr, "Enter the ID: ");
@@ -194,13 +187,17 @@ public class ClubDemo {
 					if ((members.get(i)).getId() == id2) {
 						boo = true;
 						name = (members.get(i)).getName();
-						System.out.println("ID: " + id2);
-						System.out.println("Name: " + name);
-						System.out.println("Monthly Membership Fees: $20");
+						
 						if ((members.get(i)) instanceof MultiClubMembers) {
+							System.out.println("ID: " + id2);
+							System.out.println("Name: " + name);
+							System.out.println("Monthly Membership Fees: $20");
 							System.out.println("Membership Points: " + ((MultiClubMembers) members.get(i)).getPoints());
+						}else {
+							System.out.println("ID: " + id2);
+							System.out.println("Name: " + name);
+							System.out.println("Monthly Membership Fees: $10");
 						}
-						System.out.println();
 					}
 				}
 				if (!boo) {
