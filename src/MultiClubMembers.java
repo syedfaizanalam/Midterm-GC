@@ -29,6 +29,7 @@ public class MultiClubMembers extends Members {
 	}
 
 	public void checkIn(Club club)   {
+		System.out.println("Check-in Ok. Points updated.\n");
 		this.points+=5;
 	}
 }
