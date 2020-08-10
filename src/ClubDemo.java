@@ -131,9 +131,7 @@ public class ClubDemo {
 				}
 
 			} else if (userInput == 5) {
-				boolean b =false;
-				
-					
+		//boolean b =false;	
 				int id1;
 				id1 = Validator.getInt(scnr, "Enter your ID: ");
 				members = readFile();
@@ -142,7 +140,7 @@ public class ClubDemo {
 				for (int i = 0; i < members.size(); i++) {
 					
 					if ((members.get(i)).getId() == id1) {
-						b=true;
+						//true;
 						name = (members.get(i)).getName();
 						if ((members.get(i)) instanceof SingleClubMembers) {
 							System.out.println("Enter club name: ");
@@ -167,9 +165,9 @@ public class ClubDemo {
 							
 						}
 					}
-						if(!b){
+/*		if(!b){
 							System.out.println("Invalid Id, Try again");
-						}
+						}*/
 						break;
 					}
 				}
