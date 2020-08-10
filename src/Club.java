@@ -1,16 +1,4 @@
 
-import java.lang.Iterable;
-import java.util.ArrayList;
-import java.util.List;
-
-
-
-
-import java.util.ArrayList;
-import java.util.List;
-
-
-
 public class Club {
 
 	String clubName;

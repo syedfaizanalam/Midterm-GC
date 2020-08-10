@@ -23,7 +23,7 @@ public class ClubDemo {
 		String name, clubName, userName;
 		SingleClubMembers scm = null;
 		MultiClubMembers mcm = null;
-		int id, points;
+		int id, points, userInput;
 		boolean yesNo;
 		System.out.println("Welcome to fitness center!");
 		Scanner scnr = new Scanner(System.in);
@@ -36,28 +36,25 @@ public class ClubDemo {
 			System.out.println("6-Generate Fees");
 			System.out.println("7-Exit");
 			System.out.println();
-			System.out.println("Enter menu number: ");
-			int userInput = scnr.nextInt();
+			userInput = Validator.getInt(scnr, "Enter menu number: ");
 			if (userInput == 1) {
 				listMembers();
 			} else if (userInput == 2) {
-				System.out.println("Enter id: ");
-				id = scnr.nextInt();
-				scnr.nextLine();
+				id = Validator.getInt(scnr, "Enter id: ");
 				System.out.println("Enter name: ");
 				name = scnr.nextLine();
 				yesNo = Validator.getYesNo(scnr, "Is single club member?(y/n): ");
 				if (yesNo) {
 					clubs = readClubs();
 					while (true) {
-						System.out.println("Available Clubs:");
-						System.out.printf("%-25s%-35s\n", "Club Name", "Address");
-						System.out.printf("%-25s%-35s\n", "=========", "=======");
+						System.out.println("Available Clubs: \n");
+						System.out.printf("%-40s%-35s\n", "Club Name", "Address");
+						System.out.printf("%-40s%-35s\n", "=========", "=======");
 
 						for (Club club : clubs) {
-							System.out.printf("%-25s%-35s\n", club.getClubName(), club.getAddress());
+							System.out.printf("%-40s%-35s\n", club.getClubName(), club.getAddress());
 						}
-						System.out.println("Choose a club name: ");
+						System.out.println("\nChoose a club name: \n");
 						clubName = scnr.nextLine();
 						boolean clubValid = false;
 						for (Club club : clubs) {
@@ -75,10 +72,9 @@ public class ClubDemo {
 							System.out.println("New member " + name + " added.\n");
 							break;
 						}
-					} // while
+					}
 				} else {
-					System.out.println("Enter the points: ");
-					points = scnr.nextInt();
+					points = Validator.getInt(scnr, "Enter the points: ");
 					mcm = new MultiClubMembers(id, name, points);
 					members.add(mcm);
 					appendLineToFile(mcm);
@@ -89,10 +85,12 @@ public class ClubDemo {
 				// System.out.println(formatter.format(date));
 				if (formatter.format(date).equalsIgnoreCase("10") || formatter.format(date).equalsIgnoreCase("11")) {
 					System.out.println("You have got 10% discount as you are joining between 10AM and Noon.\n");
+				} else {
+					System.out.println(
+							"There is no discount applied. If you join between 10AM and Noon, there is a discount of 10%.\n");
 				}
 			} else if (userInput == 3) {
 				listMembers();
-				scnr.nextLine();
 				System.out.println("Please enter the name for removing the membership: ");
 				String choice = scnr.nextLine();
 				boolean got = false;
@@ -108,7 +106,8 @@ public class ClubDemo {
 					System.out.println("This member is not in the list! Try again.\n");
 				}
 			} else if (userInput == 4) {
-				scnr.nextLine();
+				// listMembers();
+				members = readFile();
 				System.out.println("Enter the name please!");
 				userName = scnr.nextLine();
 				boolean boo = false;
@@ -124,6 +123,7 @@ public class ClubDemo {
 									members.get(i).getName(), " ", ((MultiClubMembers) members.get(i)).getPoints());
 							boo = true;
 						}
+						System.out.println();
 					}
 				}
 				if (!boo) {
@@ -132,10 +132,8 @@ public class ClubDemo {
 
 			} else if (userInput == 5) {
 				int id1;
-				System.out.println("Enter your ID: ");
-				id1 = scnr.nextInt();
-				scnr.nextLine();
-				//members = readFile();
+				id1 = Validator.getInt(scnr, "Enter your ID: ");
+				members = readFile();
 				clubs = readClubs();
 				boolean clubFound = false;
 				for (int i = 0; i < members.size(); i++) {
@@ -150,13 +148,13 @@ public class ClubDemo {
 									try {
 										members.get(i).checkIn(clubs.get(j));
 									} catch (InputMismatchException e) {
-										System.out.println("Check-in failed.");
+										System.out.println("Check-in failed. \n");
 									}
 									break;
 								}
 							}
 							if (!clubFound) {
-								System.out.println("Invalid Club Name");
+								System.out.println("Invalid Club Name. Try again!\n");
 							}
 						} else {
 							members.get(i).checkIn(clubs.get(0));
@@ -167,22 +165,24 @@ public class ClubDemo {
 				}
 			} else if (userInput == 6) {
 				int id2;
-				System.out.println("Enter the ID: ");
-				id2 = scnr.nextInt();
-				scnr.nextLine();
+				id2 = Validator.getInt(scnr, "Enter the ID: ");
 				members = readFile();
-
+				boolean boo = false;
 				for (int i = 0; i < members.size(); i++) {
 					if ((members.get(i)).getId() == id2) {
+						boo = true;
 						name = (members.get(i)).getName();
 						System.out.println("ID: " + id2);
 						System.out.println("Name: " + name);
-						System.out.println("Monthly Membership Fees: $10");
+						System.out.println("Monthly Membership Fees: $20");
 						if ((members.get(i)) instanceof MultiClubMembers) {
 							System.out.println("Membership Points: " + ((MultiClubMembers) members.get(i)).getPoints());
 						}
 						System.out.println();
 					}
+				}
+				if (!boo) {
+					System.out.println("Member ID does not exist.\n");
 				}
 			} else if (userInput == 7) {
 				System.out.println("Thanks for using this application.");
@@ -248,26 +248,23 @@ public class ClubDemo {
 	public static void listMembers() {
 		members = readFile();
 
-		System.out.printf("%-15s%-15s%-20s%-15s\n", "Member Id", "Name", "Club Name", "Points");
-		System.out.printf("%-15s%-15s%-20s%-15s\n", "=========", "====", "=========", "======");
+		System.out.printf("%-15s%-15s%-30s%-25s\n", "Member Id", "Name", "Club Name", "Points");
+		System.out.printf("%-15s%-15s%-30s%-25s\n", "=========", "====", "=========", "======");
 
 		for (int i = 0; i < members.size(); i++) {
 
 			if (members.get(i) instanceof SingleClubMembers) {
-				System.out.printf("%-15d%-15s%-20s\n", members.get(i).getId(), members.get(i).getName(),
+				System.out.printf("%-15d%-15s%-30s\n", members.get(i).getId(), members.get(i).getName(),
 						((SingleClubMembers) members.get(i)).getClubName());
 			} else {
-				System.out.printf("%-15d%-15s%-20s%-15d\n", members.get(i).getId(), members.get(i).getName(), " ",
+				System.out.printf("%-15d%-15s%-30s%-25d\n", members.get(i).getId(), members.get(i).getName(), " ",
 						((MultiClubMembers) members.get(i)).getPoints());
 			}
 		}
 		System.out.println();
-
 	}
 
 	public static void appendLineToFile(SingleClubMembers thing) {
-
-		// String line = thing.getCountryName() + "," + thing.getPopulation() ;
 		String line = String.format("%d,%s,%s", thing.getId(), thing.getName(), thing.getClubName());
 		List<String> lines = Collections.singletonList(line);
 		try {
@@ -278,8 +275,6 @@ public class ClubDemo {
 	}
 
 	public static void appendLineToFile(MultiClubMembers thing) {
-
-		// String line = thing.getCountryName() + "," + thing.getPopulation() ;
 		String line = String.format("%d,%s,%d", thing.getId(), thing.getName(), thing.getPoints());
 		List<String> lines = Collections.singletonList(line);
 		try {
@@ -305,7 +300,6 @@ public class ClubDemo {
 			}
 			bw.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
