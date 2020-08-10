@@ -20,7 +20,7 @@ public class ClubDemo {
 	private static List<Club> clubs = new ArrayList<>();
 
 	public static void main(String[] args) {
-		String name, clubName, userName;
+		String name, clubName;
 		SingleClubMembers scm = null;
 		MultiClubMembers mcm = null;
 		int id, points, userInput;
@@ -196,7 +196,7 @@ public class ClubDemo {
 					System.out.println("Member ID does not exist.\n");
 				}
 			} else if (userInput == 7) {
-				System.out.println("Thanks for using this application.");
+				System.out.println("Thanks for using this application.!");
 				break;
 			} else {
 				System.out.println("Invalid Option.. try again!");
@@ -268,7 +268,7 @@ public class ClubDemo {
 				System.out.printf("%-15d%-15s%-30s\n", members.get(i).getId(), members.get(i).getName(),
 						((SingleClubMembers) members.get(i)).getClubName());
 			} else {
-				System.out.printf("%-15d%-15s%-30s%-25d\n", members.get(i).getId(), members.get(i).getName(), " ",
+				System.out.printf("%-15d%-15s%-30s%-25d\n", members.get(i).getId(), members.get(i).getName(), "All clubs",
 						((MultiClubMembers) members.get(i)).getPoints());
 			}
 		}
