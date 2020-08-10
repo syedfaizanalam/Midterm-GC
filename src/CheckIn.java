@@ -15,6 +15,7 @@ public class CheckIn extends JFrame implements ActionListener {
 	private JLabel clubName; // Label for yearly salary
 	private JTextField ID; // Displays hourly salary
 	private JTextField enterClubName; // Displays yearly salary
+	private JButton checkIn;
 
 	public CheckIn() {
 
@@ -30,21 +31,21 @@ public class CheckIn extends JFrame implements ActionListener {
 		setTitle("Salary");
 
 		// Set hourly and yearly salary labels
-		wageLabel = new JLabel("Hourly wage:");
-		salLabel = new JLabel("Yearly salary:");
+		memberID = new JLabel("Member ID");
+		clubName = new JLabel("Club Name:");
 
-		wageField = new JTextField(15);
-		wageField.setEditable(true);
-		wageField.setText("0");
+		ID = new JTextField(15);
+		ID.setEditable(true);
+		ID.setText("0");
 
-		salField = new JTextField(15);
-		salField.setEditable(false);
+		enterClubName = new JTextField(15);
+		enterClubName.setEditable(true);
 
 		// Create a "Calculate" button
-		calcButton = new JButton("Calculate");
+		checkIn = new JButton("Calculate");
 
 		// Use "this" class to handle button presses
-		calcButton.addActionListener(this);
+		checkIn.addActionListener(this);
 
 		// Use a GridBagLayout
 		setLayout(new GridBagLayout());
@@ -58,27 +59,27 @@ public class CheckIn extends JFrame implements ActionListener {
 		positionConst.insets = new Insets(10, 10, 10, 10);
 
 		// Add component using the specified constraints
-		add(wageLabel, positionConst);
+		add(memberID, positionConst);
 
 		positionConst.gridx = 1;
 		positionConst.gridy = 0;
 		positionConst.insets = new Insets(10, 10, 10, 10);
-		add(wageField, positionConst);
+		add(clubName, positionConst);
 
 		positionConst.gridx = 0;
 		positionConst.gridy = 1;
 		positionConst.insets = new Insets(10, 10, 10, 10);
-		add(salLabel, positionConst);
+		add(ID, positionConst);
 
 		positionConst.gridx = 1;
 		positionConst.gridy = 1;
 		positionConst.insets = new Insets(10, 10, 10, 10);
-		add(salField, positionConst);
+		add(enterClubName, positionConst);
 
 		positionConst.gridx = 0;
 		positionConst.gridy = 2;
 		positionConst.insets = new Insets(10, 10, 10, 10);
-		add(calcButton, positionConst);
+		add(checkIn, positionConst);
 	}
 
 	@Override
