@@ -18,13 +18,16 @@ public class Layout extends JFrame{
 		
 		JLabel imgLabel = new JLabel(new ImageIcon("C:\\Users\\Faizan\\Pictures"));
 		
-		JButton buttonH = new JButton("Home");
+		
 		JButton button1 = new JButton("Check In");
 		JButton button2 = new JButton("Calculate Fees");
+		JButton button3 = new JButton("Home");
+		
 		JButton button5 = new JButton("Search Member");
 		JButton button6 = new JButton("See All Members");
 		JButton button7 = new JButton("Add");
 		JButton button8 = new JButton("Remove");
+
 
 		
 		Container mainContainer = this.getContentPane();
@@ -38,6 +41,7 @@ public class Layout extends JFrame{
 		topPanel.setBackground(Color.ORANGE);
 		topPanel.setLayout(new FlowLayout(5));
 		
+		topPanel.add(button3);
 		topPanel.add(button1);
 		topPanel.add(button2);
 
@@ -58,6 +62,7 @@ public class Layout extends JFrame{
 		gridPanel.add(button6);
 		gridPanel.add(button7);
 		gridPanel.add(button8);
+
 		
 		JLabel label = new JLabel("Center Box", SwingConstants.CENTER);
 		label.setOpaque(true);
