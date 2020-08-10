@@ -131,14 +131,17 @@ public class ClubDemo {
 				}
 
 			} else if (userInput == 5) {
+<<<<<<< HEAD
 		//boolean b =false;	
+=======
+				boolean b =false;
+>>>>>>> eabebe8e6fd7ace6d4a8c0a3a7656da2aa22477c
 				int id1;
 				id1 = Validator.getInt(scnr, "Enter your ID: ");
 				members = readFile();
 				clubs = readClubs();
 				boolean clubFound = false;
 				for (int i = 0; i < members.size(); i++) {
-					
 					if ((members.get(i)).getId() == id1) {
 						//true;
 						name = (members.get(i)).getName();
@@ -154,14 +157,16 @@ public class ClubDemo {
 										System.out.println("Check-in failed. \n");
 									}
 									break;
-								}
-							}
+								}//clubs.get
+							}//for
 							if (!clubFound) {
 								System.out.println("Invalid Club Name. Try again!\n");
-							}
-						} else {
+							}//if (!clubFound)
+						} //single
+						else {
 							members.get(i).checkIn(clubs.get(0));
 							writeToFile(members);
+<<<<<<< HEAD
 							
 						}
 					}
@@ -170,6 +175,15 @@ public class ClubDemo {
 						}*/
 						break;
 					}
+=======
+						}//else
+					}//members.get(i)
+				}//for
+						if(!b){
+							System.out.println("Invalid Id, Try again!\n");
+						}
+						//break;
+>>>>>>> eabebe8e6fd7ace6d4a8c0a3a7656da2aa22477c
 				}
 			 else if (userInput == 6) {
 				int id2;
