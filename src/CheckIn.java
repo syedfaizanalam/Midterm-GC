@@ -14,8 +14,12 @@ public class CheckIn extends JFrame implements ActionListener {
 	private JLabel memberID; // Label for hourly salary
 	private JLabel clubName; // Label for yearly salary
 	private JTextField ID; // Displays hourly salary
+<<<<<<< HEAD
 	private JTextField enterClubName; // Displays yearly salary
 	private JButton checkIn;
+=======
+	private JTextField ClubName; // Displays yearly salary
+>>>>>>> 4ea1705a4d492042d7312a6e1b6a34214764ed1f
 
 	public CheckIn() {
 
@@ -84,7 +88,10 @@ public class CheckIn extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+		int ID;
+		String ClubName;
+		ID=wageField.getText();
+		ClubName=wageField.getText();
 
 	}
 
