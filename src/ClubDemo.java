@@ -91,11 +91,11 @@ public class ClubDemo {
 				}
 			} else if (userInput == 3) {
 				listMembers();
-				System.out.println("Please enter the name for removing the membership: ");
-				String choice = scnr.nextLine();
+				System.out.println("Please enter the Id for removing the membership: ");
+				int choice = scnr.nextInt();
 				boolean got = false;
 				for (int i = 0; i < members.size(); i++) {
-					if (members.get(i).getName().equalsIgnoreCase(choice)) {
+					if (members.get(i).getId()==choice) {
 						System.out.println("Member " + members.get(i).getName() + " removed.\n");
 						members.remove(i);
 						writeToFile(members);
@@ -108,11 +108,11 @@ public class ClubDemo {
 			} else if (userInput == 4) {
 				// listMembers();
 				members = readFile();
-				System.out.println("Enter the name please!");
-				userName = scnr.nextLine();
+				System.out.println("Enter the ID please!");
+				int userID = scnr.nextInt();
 				boolean boo = false;
 				for (int i = 0; i < members.size(); i++) {
-					if (members.get(i).getName().equalsIgnoreCase(userName)) {
+					if (members.get(i).getId()==userID) {
 
 						if (members.get(i) instanceof SingleClubMembers) {
 							System.out.printf("%-15d%-15s%-20s\n", members.get(i).getId(), members.get(i).getName(),
