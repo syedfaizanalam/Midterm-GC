@@ -25,7 +25,7 @@ public  class SingleClubMembers extends Members {
 	}
 	public void checkIn(Club club)   {
 			if(club.clubName.equalsIgnoreCase(this.getClubName())){
-				System.out.println("Check-in ok.");	
+				System.out.println("Check-in ok.\n");	
 		} else {
 			throw new InputMismatchException();
 		}
