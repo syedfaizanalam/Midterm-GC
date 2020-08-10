@@ -79,8 +79,9 @@ public class Layout extends JFrame{
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Layout mylayout = new Layout("My Custom Layout");
+		Layout mylayout = new Layout("Fitness Center Application");
 		mylayout.setVisible(true);
+
 	}
 
 }

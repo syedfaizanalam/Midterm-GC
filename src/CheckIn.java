@@ -37,11 +37,11 @@ public class CheckIn extends JFrame implements ActionListener {
 		// Set hourly and yearly salary labels
 		memberID = new JLabel("Member ID");
 		clubName = new JLabel("Club Name:");
-
+		
 		ID = new JTextField(15);
 		ID.setEditable(true);
 		ID.setText("0");
-
+		
 		enterClubName = new JTextField(15);
 		enterClubName.setEditable(true);
 
@@ -50,7 +50,8 @@ public class CheckIn extends JFrame implements ActionListener {
 
 		// Use "this" class to handle button presses
 		checkIn.addActionListener(this);
-
+		checkIn.
+		
 		// Use a GridBagLayout
 		setLayout(new GridBagLayout());
 		positionConst = new GridBagConstraints();
@@ -90,8 +91,9 @@ public class CheckIn extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) {
 		int ID;
 		String ClubName;
-		ID=wageField.getText();
-		ClubName=wageField.getText();
+		ID=memberID.getText();
+		ClubName=clubName.getText();
+		text.setText("Button Clicked " + numClicks + " times");
 
 	}
 

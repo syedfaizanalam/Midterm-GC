@@ -127,12 +127,11 @@ public class ClubDemo {
 					}
 				}
 				if (!boo) {
-					System.out.println("The member is not in the list! Try again.");
+					System.out.println("The member is not in the list! Try again.\n");
 				}
 
 			} else if (userInput == 5) {
-		//boolean b =false;	
-				boolean b =false;
+				boolean b = false;
 				int id1;
 				id1 = Validator.getInt(scnr, "Enter your ID: ");
 				members = readFile();
@@ -140,7 +139,7 @@ public class ClubDemo {
 				boolean clubFound = false;
 				for (int i = 0; i < members.size(); i++) {
 					if ((members.get(i)).getId() == id1) {
-						b=true;
+						b = true;
 						name = (members.get(i)).getName();
 						if ((members.get(i)) instanceof SingleClubMembers) {
 							System.out.println("Enter club name: ");
@@ -154,31 +153,22 @@ public class ClubDemo {
 										System.out.println("Check-in failed. \n");
 									}
 									break;
-								}//clubs.get
-							}//for
+								} // clubs.get
+							} // for
 							if (!clubFound) {
 								System.out.println("Invalid Club Name. Try again!\n");
-							}//if (!clubFound)
-						} //single
+							} // if (!clubFound)
+						} // single
 						else {
 							members.get(i).checkIn(clubs.get(0));
+							writeToFile(members);
+						}
 					}
-					}
-/*		if(!b){
-							System.out.println("Invalid Id, Try again");
-						}*/
-						break;
-					}
-			
-						}//else
-					//members.get(i)
-				//for
-			if(!b){
-				System.out.println("Invalid Id, Try again!\n");
-			}
-						//break;
-
-			 else if (userInput == 6) {
+				}
+				if (!b) {
+					System.out.println("Invalid Id, Try again!\n");
+				}
+			} else if (userInput == 6) {
 				int id2;
 				id2 = Validator.getInt(scnr, "Enter the ID: ");
 				members = readFile();
@@ -187,16 +177,18 @@ public class ClubDemo {
 					if ((members.get(i)).getId() == id2) {
 						boo = true;
 						name = (members.get(i)).getName();
-						
+
 						if ((members.get(i)) instanceof MultiClubMembers) {
 							System.out.println("ID: " + id2);
 							System.out.println("Name: " + name);
 							System.out.println("Monthly Membership Fees: $20");
-							System.out.println("Membership Points: " + ((MultiClubMembers) members.get(i)).getPoints());
-						}else {
+							System.out.println(
+									"Membership Points: " + ((MultiClubMembers) members.get(i)).getPoints() + "\n");
+						} else {
 							System.out.println("ID: " + id2);
 							System.out.println("Name: " + name);
-							System.out.println("Monthly Membership Fees: $10");
+							System.out.println("Club Name: " + ((SingleClubMembers) members.get(i)).getClubName());
+							System.out.println("Monthly Membership Fees: $10\n");
 						}
 					}
 				}
