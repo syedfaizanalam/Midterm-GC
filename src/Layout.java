@@ -51,7 +51,7 @@ public class Layout extends JFrame{
 		JPanel middlePanel = new JPanel();
 		middlePanel.setBorder(new LineBorder(Color.BLACK,3));
 		middlePanel.setLayout(new FlowLayout(4,4,4));
-		middlePanel.setBackground(Color.CYAN);
+		middlePanel.setBackground(Color.orange);
 		
 		JPanel gridPanel = new JPanel();
 		gridPanel.setLayout(new GridLayout(4,1,5,5));

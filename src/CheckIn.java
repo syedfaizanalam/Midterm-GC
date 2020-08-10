@@ -89,11 +89,11 @@ public class CheckIn extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		int ID;
-		String ClubName;
-		ID=memberID.getText();
-		ClubName=clubName.getText();
-		text.setText("Button Clicked " + numClicks + " times");
+//		int ID;
+//		String ClubName;
+//		ID=memberID.getText();
+//		ClubName=clubName.getText();
+//		text.setText("Button Clicked " + numClicks + " times");
 
 	}
 
