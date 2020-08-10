@@ -131,13 +131,18 @@ public class ClubDemo {
 				}
 
 			} else if (userInput == 5) {
+				boolean b =false;
+				
+					
 				int id1;
 				id1 = Validator.getInt(scnr, "Enter your ID: ");
 				members = readFile();
 				clubs = readClubs();
 				boolean clubFound = false;
 				for (int i = 0; i < members.size(); i++) {
+					
 					if ((members.get(i)).getId() == id1) {
+						b=true;
 						name = (members.get(i)).getName();
 						if ((members.get(i)) instanceof SingleClubMembers) {
 							System.out.println("Enter club name: ");
@@ -159,11 +164,16 @@ public class ClubDemo {
 						} else {
 							members.get(i).checkIn(clubs.get(0));
 							writeToFile(members);
+							
+						}
+					}
+						if(!b){
+							System.out.println("Invalid Id, Try again");
 						}
 						break;
 					}
 				}
-			} else if (userInput == 6) {
+			 else if (userInput == 6) {
 				int id2;
 				id2 = Validator.getInt(scnr, "Enter the ID: ");
 				members = readFile();
