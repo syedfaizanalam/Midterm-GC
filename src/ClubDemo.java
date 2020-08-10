@@ -142,6 +142,7 @@ public class ClubDemo {
 						b = true;
 						name = (members.get(i)).getName();
 						if ((members.get(i)) instanceof SingleClubMembers) {
+							do {
 							System.out.println("Enter club name: ");
 							String inputClubName = scnr.nextLine();
 							for (int j = 0; j < clubs.size(); j++) {
@@ -156,8 +157,9 @@ public class ClubDemo {
 								} // clubs.get
 							} // for
 							if (!clubFound) {
-								System.out.println("Invalid Club Name. Try again!\n");
+								System.out.println("Invalid Club Name. Try again!");
 							} // if (!clubFound)
+							}while(!clubFound);
 						} // single
 						else {
 							members.get(i).checkIn(clubs.get(0));
@@ -259,16 +261,16 @@ public class ClubDemo {
 	public static void listMembers() {
 		members = readFile();
 
-		System.out.printf("%-15s%-15s%-30s%-25s\n", "Member Id", "Name", "Club Name", "Points");
-		System.out.printf("%-15s%-15s%-30s%-25s\n", "=========", "====", "=========", "======");
+		System.out.printf("%-15s%-15s%-40s%-25s\n", "Member Id", "Name", "Club Name", "Points");
+		System.out.printf("%-15s%-15s%-40s%-25s\n", "=========", "====", "=========", "======");
 
 		for (int i = 0; i < members.size(); i++) {
 
 			if (members.get(i) instanceof SingleClubMembers) {
-				System.out.printf("%-15d%-15s%-30s\n", members.get(i).getId(), members.get(i).getName(),
+				System.out.printf("%-15d%-15s%-40s\n", members.get(i).getId(), members.get(i).getName(),
 						((SingleClubMembers) members.get(i)).getClubName());
 			} else {
-				System.out.printf("%-15d%-15s%-30s%-25d\n", members.get(i).getId(), members.get(i).getName(), "All clubs",
+				System.out.printf("%-15d%-15s%-40s%-25d\n", members.get(i).getId(), members.get(i).getName(), "All clubs",
 						((MultiClubMembers) members.get(i)).getPoints());
 			}
 		}

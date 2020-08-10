@@ -3,7 +3,7 @@
 1003,Golam,Planet fitness
 1004,Faizan,165
 1006,Nithilan,Powerhouse Gym Birmingham
-1007,Mercy,77
+1007,Mercy,82
 1009,David,la fitness troy
+1010,Rebecca,detroit strong personal training gym
 34,kyle,planet fitness
-350,Nishika,powerhouse gym birmingham
